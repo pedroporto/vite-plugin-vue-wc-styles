@@ -12,7 +12,7 @@ The idea with this vite plugin is to create a solution for that while `vue` core
 ### Installation
 
 ```
-  npm install --save-dev vite-plugin-vue-wc-css
+  npm install --save-dev vite-plugin-vue-wc-styles
 ```
 
 ### Vue 3
@@ -20,7 +20,7 @@ The idea with this vite plugin is to create a solution for that while `vue` core
 ```typescript
 // main.ts example
 import { defineCustomElement } from 'vue';
-import { webComponentCustomElement } from 'vite-plugin-vue-wc-css';
+import { webComponentCustomElement } from 'vite-plugin-vue-wc-styles';
 import SomeComponent from './components/SomeComponent.ce.vue'
 
 const VueCustomElement = defineCustomElement(MyComponent);
@@ -33,7 +33,7 @@ customElements.define('my-component', CustomElement);
 // vue.config.ts example
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import vueWcStyles from 'vite-plugin-vue-wc-css';
+import vueWcStyles from 'vite-plugin-vue-wc-styles';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -49,7 +49,7 @@ export default defineConfig({
 // main.ts example
 import Vue from 'vue';
 import wrap from '@vue/web-component-wrapper'
-import { webComponentCustomElement } from 'vite-plugin-vue-wc-css';
+import { webComponentCustomElement } from 'vite-plugin-vue-wc-styles';
 import SomeComponent from './components/SomeComponent.vue'
 
 const VueCustomElement = wrap(Vue, MyComponent) as unknown as CustomElementConstructor;
@@ -64,7 +64,7 @@ customElements.define('some-web-component', CustomElement);
 // vue.config.ts example
 import { defineConfig } from 'vite';
 import { createVuePlugin } from 'vite-plugin-vue2';
-import vueWcStyles from 'vite-plugin-vue-wc-css';
+import vueWcStyles from 'vite-plugin-vue-wc-styles';
 
 // https://vitejs.dev/config/
 export default defineConfig({

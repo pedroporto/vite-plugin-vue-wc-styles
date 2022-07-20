@@ -1,5 +1,5 @@
 {
-  "name": "vite-plugin-vue-wc-css",
+  "name": "vite-plugin-vue-wc-styles",
   "version": "0.1.0",
   "description": "vite plugin for CSS in web components",
   "main": "./dist/index.js",
