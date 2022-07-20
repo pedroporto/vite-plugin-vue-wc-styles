@@ -1,0 +1,10 @@
+node_modules
+src/*
+.gitignore
+!dist
+tsconfig.json
+yarn.lock
+package-lock.json
+.vscode
+.eslintrc.js
+.github/*
