@@ -17,7 +17,6 @@ const vueWcStyles = (): Plugin => {
 
         if (bundlePart.type === 'asset' && bundlePart.fileName.includes('.css')) {
           cssStyle += bundlePart.source;
-          delete bundle[key];
         }
       });
 

@@ -20,7 +20,7 @@ The idea with this vite plugin is to create a solution for that while `vue` core
 ```typescript
 // main.ts example
 import { defineCustomElement } from 'vue';
-import { webComponentCustomElement } from 'vite-plugin-vue-wc-styles';
+import { webComponentCustomElement } from 'vite-plugin-vue-wc-styles/custom-element';
 import SomeComponent from './components/SomeComponent.ce.vue'
 
 const VueCustomElement = defineCustomElement(MyComponent);
@@ -49,7 +49,7 @@ export default defineConfig({
 // main.ts example
 import Vue from 'vue';
 import wrap from '@vue/web-component-wrapper'
-import { webComponentCustomElement } from 'vite-plugin-vue-wc-styles';
+import { webComponentCustomElement } from 'vite-plugin-vue-wc-styles/custom-element';
 import SomeComponent from './components/SomeComponent.vue'
 
 const VueCustomElement = wrap(Vue, MyComponent) as unknown as CustomElementConstructor;
