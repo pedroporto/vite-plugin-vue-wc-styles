@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "target": "ES2020",
+    "target": "ESNext",
     "module": "CommonJS",
     "moduleResolution": "node",
     "strict": true,
@@ -11,6 +11,7 @@
     "noUnusedLocals": true,
     "esModuleInterop": true,
     "baseUrl": ".",
+    "types": ["vite/client"]
   },
   "exclude": [
     "node_modules",
