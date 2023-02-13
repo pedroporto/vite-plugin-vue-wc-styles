@@ -31,22 +31,22 @@
   "author": "Pedro Porto",
   "license": "MIT",
   "peerDependencies": {
-    "vite": "^4.0.4"
+    "vite": "^4.1.1"
   },
   "engines": {
     "node": ">=14.16.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "4.25.0",
+    "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-prettier": "4.0.0",
     "eslint": "7.32.0",
-    "lint-staged": "12.3.5",
-    "prettier": "2.5.1",
+    "prettier": "2.8.4",
+    "lint-staged": "13.1.2",
     "stylelint": "14.16.1",
     "typescript": "4.9.5",
-    "vite": "^4.0.4",
+    "vite": "^4.1.1",
     "@types/node": "^18.11.18"
   },
   "repository": {
