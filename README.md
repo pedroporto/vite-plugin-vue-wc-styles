@@ -71,3 +71,8 @@ export default defineConfig({
   plugins: [createVuePlugin(), vueWcStyles()],
 });
 ```
+
+### HMR
+HMR is enabled since `v0.3.0`. It makes usage of `vite` plugin hooks to inject styles in the web component.
+
+> A reload might be need when bootstrapping the server.
