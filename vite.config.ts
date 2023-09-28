@@ -8,10 +8,16 @@ export default defineConfig({
         index: path.resolve(__dirname, './src/index.ts'),
         'custom-element': path.resolve(__dirname, './src/custom-element.ts'),
       },
-      output: {
-        format: 'esm',
-        entryFileNames: '[name].js',
-      },
+      output: [
+        {
+          format: 'esm',
+          entryFileNames: '[name].mjs',
+        },
+        {
+          format: 'cjs',
+          entryFileNames: '[name].cjs',
+        },
+      ],
       preserveEntrySignatures: 'allow-extension',
     },
   },

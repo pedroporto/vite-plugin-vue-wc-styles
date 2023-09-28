@@ -2,18 +2,18 @@
   "name": "vite-plugin-vue-wc-styles",
   "version": "0.3.0-rc",
   "description": "vite plugin for CSS in web components",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     "./custom-element": {
-      "import": "./dist/custom-element.js",
-      "require": "./dist/custom-element.js",
+      "import": "./dist/custom-element.mjs",
+      "require": "./dist/custom-element.cjs",
       "types": "./dist/custom-element.d.ts"
     },
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.js",
+      "import": "./dist/index.cjs",
+      "require": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     }
   },
