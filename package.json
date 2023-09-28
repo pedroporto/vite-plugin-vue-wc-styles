@@ -31,7 +31,7 @@
   "author": "Pedro Porto",
   "license": "MIT",
   "peerDependencies": {
-    "vite": "^4.1.1"
+    "vite": "^4.4.9"
   },
   "engines": {
     "node": ">=14.16.1"
@@ -46,7 +46,7 @@
     "lint-staged": "13.1.2",
     "stylelint": "15.4.0",
     "typescript": "4.9.5",
-    "vite": "^4.1.1",
+    "vite": "^4.4.9",
     "@types/node": "^18.11.18"
   },
   "repository": {
