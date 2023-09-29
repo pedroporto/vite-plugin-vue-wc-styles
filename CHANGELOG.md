@@ -1,4 +1,4 @@
-## [0.3.1](https://github.com/pedroporto/vite-plugin-vue-wc-styles/compare/v0.3.0...v0.3.1) (2023-09-29)
+# [0.3.0-beta.2](https://github.com/pedroporto/vite-plugin-vue-wc-styles/compare/v0.3.0-beta.1...v0.3.0-beta.2) (2023-09-29)
 
 
 ### Bug Fixes
