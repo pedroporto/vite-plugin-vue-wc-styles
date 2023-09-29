@@ -1,7 +1,7 @@
 node_modules
 src/*
 .gitignore
-!dist
+dist
 tsconfig.json
 yarn.lock
 package-lock.json
