@@ -1,1 +1,79 @@
-const u=(l,a)=>{const{moduleGraph:s,ws:t}=l,e=s.getModuleById(a);e&&(s.invalidateModule(e),t&&t.send({type:"full-reload",path:"*"}))},d=()=>{let l,a="";const s=[];return{name:"vue-wc-styles",enforce:"post",apply:"build",generateBundle:(t,e)=>{let o="";Object.keys(e).forEach(n=>{const c=e[n];c.type==="asset"&&c.fileName.includes(".css")&&(o+=c.source)}),Object.keys(e).forEach(n=>{const c=e[n];if(c.type==="chunk"&&c.code.includes("{{ CUSTOM_CSS_PLACEHOLDER }}")){const r=c.code.replace('"{{ CUSTOM_CSS_PLACEHOLDER }}"',JSON.stringify(o));c.code=r}})},configureServer(t){l=t},handleHotUpdate(){s.forEach(t=>{const e=l.moduleGraph.getModuleById(t);e&&l.reloadModule(e)})},transform(t,e){if(l){if(e.includes(".scss")){const o=t.match(/const __vite__css = [`"]([^`"]*)[`"]/s);if(o){const n=o[1];a+=n,s.includes(e)||s.push(e)}}t.includes("{{ CUSTOM_CSS_PLACEHOLDER }}")&&(t=t.replace("{{ CUSTOM_CSS_PLACEHOLDER }}",a),u(l,e),s.includes(e)||s.push(e))}return t}}};export{d as default};
+const invalidateModule = (server, moduleId) => {
+  const { moduleGraph, ws } = server;
+  const module = moduleGraph.getModuleById(moduleId);
+  if (module) {
+    moduleGraph.invalidateModule(module);
+    if (ws) {
+      ws.send({
+        type: "full-reload",
+        path: "*"
+      });
+    }
+  }
+};
+const vueWcStyles = () => {
+  let server;
+  let virtualStyles = "";
+  const moduleIds = [];
+  return {
+    name: "vue-wc-styles",
+    enforce: "post",
+    generateBundle: (_, bundle) => {
+      let cssStyle = "";
+      Object.keys(bundle).forEach((key) => {
+        const bundlePart = bundle[key];
+        if (bundlePart.type === "asset" && bundlePart.fileName.includes(".css")) {
+          cssStyle += bundlePart.source;
+        }
+      });
+      Object.keys(bundle).forEach((key) => {
+        const bundlePart = bundle[key];
+        if (bundlePart.type === "chunk") {
+          if (bundlePart.code.includes("{{ CUSTOM_CSS_PLACEHOLDER }}")) {
+            const injectedStyleCode = bundlePart.code.replace(
+              '"{{ CUSTOM_CSS_PLACEHOLDER }}"',
+              JSON.stringify(cssStyle)
+            );
+            bundlePart.code = injectedStyleCode;
+          }
+        }
+      });
+    },
+    configureServer(_server) {
+      server = _server;
+    },
+    handleHotUpdate() {
+      moduleIds.forEach((id) => {
+        const module = server.moduleGraph.getModuleById(id);
+        if (module) {
+          server.reloadModule(module);
+        }
+      });
+    },
+    transform(code, id) {
+      if (server) {
+        if (id.includes(".scss")) {
+          const match = code.match(/const __vite__css = [`"]([^`"]*)[`"]/s);
+          if (match) {
+            const extractedCSS = match[1];
+            virtualStyles += extractedCSS;
+            if (!moduleIds.includes(id)) {
+              moduleIds.push(id);
+            }
+          }
+        }
+        if (code.includes("{{ CUSTOM_CSS_PLACEHOLDER }}")) {
+          code = code.replace("{{ CUSTOM_CSS_PLACEHOLDER }}", virtualStyles);
+          invalidateModule(server, id);
+          if (!moduleIds.includes(id)) {
+            moduleIds.push(id);
+          }
+        }
+      }
+      return code;
+    }
+  };
+};
+export {
+  vueWcStyles as default
+};

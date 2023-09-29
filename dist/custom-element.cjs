@@ -1,1 +1,15 @@
-"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const s=n=>{class o extends n{constructor(){var t;super();const e=document.createElement("style");e.textContent="{{ CUSTOM_CSS_PLACEHOLDER }}",(t=this.shadowRoot)==null||t.prepend(e)}}return o};exports.webComponentCustomElement=s;
+"use strict";
+Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+const webComponentCustomElement = (CustomElement) => {
+  class WebComponentElement extends CustomElement {
+    constructor() {
+      var _a;
+      super();
+      const styleElement = document.createElement("style");
+      styleElement.textContent = "{{ CUSTOM_CSS_PLACEHOLDER }}";
+      (_a = this.shadowRoot) == null ? void 0 : _a.prepend(styleElement);
+    }
+  }
+  return WebComponentElement;
+};
+exports.webComponentCustomElement = webComponentCustomElement;
