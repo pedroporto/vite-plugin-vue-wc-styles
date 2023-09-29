@@ -52,7 +52,7 @@ const vueWcStyles = () => {
     },
     transform(code, id) {
       if (server) {
-        if (id.includes(".scss")) {
+        if (id.includes(".scss") || id.includes(".css")) {
           const match = code.match(/const __vite__css = [`"]([^`"]*)[`"]/s);
           if (match) {
             const extractedCSS = match[1];
