@@ -26,7 +26,6 @@ const vueWcStyles = (): Plugin => {
   return {
     name: 'vue-wc-styles',
     enforce: 'post',
-    apply: 'build',
     generateBundle: (_, bundle) => {
       let cssStyle = '';
 
