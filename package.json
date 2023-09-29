@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-vue-wc-styles",
-  "version": "0.3.1-rc",
+  "version": "0.3.2-rc",
   "description": "vite plugin for CSS in web components",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

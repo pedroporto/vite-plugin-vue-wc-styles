@@ -17,6 +17,8 @@ The idea with this vite plugin is to create a solution for that while `vue` core
 
 ### Vue 3
 
+> When using this plugin, [`@vitejs/plugin-vue` `customElement`](https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#using-vue-sfcs-as-custom-elements) property shouldn't be set as `true`
+
 ```typescript
 // main.ts example
 import { defineCustomElement } from 'vue';
@@ -37,6 +39,7 @@ import vueWcStyles from 'vite-plugin-vue-wc-styles';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // vite vue plugin must not have the customElement as true.
   plugins: [vue(), vueWcStyles()],
 });
 ```
