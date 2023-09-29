@@ -1,3 +1,10 @@
+## [0.3.2-beta.1](https://github.com/pedroporto/vite-plugin-vue-wc-styles/compare/v0.3.1...v0.3.2-beta.1) (2023-09-29)
+
+
+### Bug Fixes
+
+* added .css files transform hook ([5cc34cf](https://github.com/pedroporto/vite-plugin-vue-wc-styles/commit/5cc34cfdd76284373b7d07ee1e271b59276714ed))
+
 # [0.3.0-beta.2](https://github.com/pedroporto/vite-plugin-vue-wc-styles/compare/v0.3.0-beta.1...v0.3.0-beta.2) (2023-09-29)
 
 
