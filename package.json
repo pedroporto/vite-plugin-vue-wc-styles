@@ -27,7 +27,7 @@
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly"
   },
-  "keywords": [],
+  "keywords": ["typescript", "vue", "vue3", "webcomponent", "web component", "custom element", "javascript", "utils", "vite"],
   "author": "Pedro Porto",
   "license": "MIT",
   "peerDependencies": {
