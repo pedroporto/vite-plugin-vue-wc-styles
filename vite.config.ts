@@ -2,7 +2,11 @@ import path from 'node:path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  // esbuild: {
+  //   keepNames: true, // Preserve variable names
+  // },
   build: {
+    minify: false,
     rollupOptions: {
       input: {
         index: path.resolve(__dirname, './src/index.ts'),
